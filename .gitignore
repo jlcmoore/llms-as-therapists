@@ -1,0 +1,10 @@
+*~
+*#
+*.pyc
+*__pycache__*
+*.DS_Store
+env-therapy/
+*ipynb_checkpoints/
+external_data/counseling_and_psychotherapy_transcripts_volume_i/
+external_data/counseling_and_psychotherapy_transcripts_volume_ii/
+.mypy_cache/

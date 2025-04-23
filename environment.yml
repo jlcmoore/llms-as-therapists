@@ -1,0 +1,24 @@
+name: env_therapy
+channels:
+  - defaults
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - pip
+  - cudatoolkit
+  - pytorch-cuda
+  - pytorch
+  - torchvision
+  - torchaudio
+  - python=3.10
+  - pip:
+    - black
+    - pylint
+    - pytest
+    - nbqa
+    - pandas
+    - redivis
+    - matplotlib
+    - numpy    
+    - modelendpoints[linux]@git+https://github.com/jlcmoore/modelendpoints

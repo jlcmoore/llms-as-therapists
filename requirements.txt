@@ -1,0 +1,10 @@
+black
+pylint
+pytest
+nbqa
+pandas
+redivis
+matplotlib
+numpy
+statsmodels
+modelendpoints @ git+https://github.com/jlcmoore/modelendpoints

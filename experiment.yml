@@ -1,0 +1,54 @@
+# This file outlines a job for the AI2 beaker machines which downloads this 
+# repository and runs the command in `tasks[0]['arguments']`. `run_experiments.py`
+# uses this file as a template.
+version: v2
+budget: ai2/mosaic
+tasks:
+  - name: main
+    image:
+      beaker: ai2/conda
+    command: [bash, /gantry/entrypoint.sh]
+    arguments: [python, evaluate.py, --output-directory, /results, --model, meta-llama/Meta-Llama-3-70B-Instruct, --source, vllm]
+    envVars:
+      - name: GANTRY_VERSION
+        value: 0.18.0
+      - name: GITHUB_REPO
+        value: jlcmoore/therapy_eval
+      - name: GIT_REF # This is the commit
+        value: HEAD
+      - name: GITHUB_TOKEN
+        secret: GITHUB_TOKEN
+      - name: PYTHON_VERSION
+        value: "3.10"
+      - name: OPENAI_API_KEY
+        secret: OPENAI_API_KEY
+      - name: ANTHROPIC_API_KEY
+        secret: ANTHROPIC_API_KEY
+      - name: HUGGING_FACE_HUB_TOKEN
+        secret: HUGGING_FACE_HUB_TOKEN
+      - name: HF_HOME # Do this to persist hugging face model downloads
+        value: /net/nfs.cirrascale/mosaic/jaredm/hf/
+    datasets:
+      - mountPath: /gantry
+        source:
+          beaker: 01HTWM59TS7Z5S6CV0SS1FMYGM
+      - mountPath: /net/nfs.cirrascale
+        source:
+          hostPath: /net/nfs.cirrascale
+    result:
+      path: /results
+    resources:
+      gpuCount: 2
+    context:
+      priority: preemptible
+    constraints:
+      cluster:
+        # a100s
+        - ai2/general-cirrascale-a100-80g-ib
+        - ai2/pluto-cirrascale
+        # # normal
+        # - ai2/prior-elanding        
+        # - ai2/mosaic-cirrascale
+        # - ai2/aristo-cirrascale
+        # - ai2/prior-cirrascale
+        # - ai2/s2-cirrascale
