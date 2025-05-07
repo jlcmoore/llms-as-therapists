@@ -27,7 +27,7 @@ This is the repository for the paper, [Expressing stigma and inappropriate respo
 
 ## Executive Summary
 
-Large language models (LLMs) like ChatGPT aim to please---they're sycophantic. [In the recent words of OpenAI](https://openai.com/index/expanding-on-sycophancy/), "this kind of behavior can raise safety concerns---including around issues like mental health, emotional over-reliance, or risky behavior."[^openai]
+Large language models (LLMs) like ChatGPT aim to please---they're sycophantic. [In the recent words of OpenAI](https://openai.com/index/expanding-on-sycophancy/), "this kind of behavior can raise safety concerns---including around issues like mental health, emotional over-reliance, or risky behavior."
 
 In our peer reviewed research, we find that a number of commercially available chatbots (e.g., on the therapy platform 7cups or the OpenAI GPT store)[^1] make inappropriate---even dangerous---responses when presented with various simulations of different mental health conditions. These are chatbots that have logged millions of interactions with real people. Furthermore, the LLMs which often power those bots---from state of the art OpenAI models to open weight models from Meta---also make such inappropriate statements, and, furthermore, express mental health stigma.[^2]  In fact, bigger and newer models LLMs exhibit similar amounts of mental health stigma as smaller and older ones do. 
 
